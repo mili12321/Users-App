@@ -1,0 +1,138 @@
+@import "../../../../../../../assets/styles/global.scss";
+.users-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 25px 0;
+  font-size: 0.9em;
+  margin: 0px auto;
+  color: $theme-color;
+  max-width: 1400px;
+  width: 100%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  th,
+  td {
+    &.picture {
+      width: 50px;
+    }
+    &.gender {
+      width: 50px;
+    }
+    &.city {
+      max-width: 150px;
+    }
+    &.dob {
+      width: 130px;
+    }
+    &.nationality {
+      max-width: 100px;
+    }
+  }
+
+  td,
+  th {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+  }
+
+  tr th:first-child,
+  tr td:first-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  thead tr {
+    background-image: url(https://www.transparenttextures.com/patterns/cubes.png),
+      $table-linear-gradient;
+    color: $theme-color;
+    /* top-left border-radius */
+    &:first-child th:first-child {
+      border-top-left-radius: 6px;
+    }
+
+    /* top-right border-radius */
+    &:first-child th:last-child {
+      border-top-right-radius: 6px;
+    }
+
+    th {
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  th,
+  td {
+    padding: 5px 10px;
+    text-align: start;
+  }
+
+  tbody tr {
+    font-family: $light;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+    background-color: $content-bg;
+    backdrop-filter: blur(20px);
+
+    color: $theme-color;
+    height: 59px;
+
+    &:nth-of-type(even) {
+      background: $content-bg-even;
+      color: $theme-color;
+    }
+    &:hover {
+      background-color: $content-bg-hover;
+    }
+
+    /* bottom-left border-radius */
+    &:last-child td:first-child {
+      border-bottom-left-radius: 6px;
+    }
+
+    /* bottom-right border-radius */
+    &:last-child td:last-child {
+      border-bottom-right-radius: 6px;
+    }
+  }
+
+  tbody tr:last-of-type {
+    border-bottom: 2px solid $table-linear-gradient;
+  }
+  tbody {
+    tr {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .picture {
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        padding: 2px;
+        background: $table-linear-gradient;
+      }
+    }
+  }
+}
+
+.title-container {
+  user-select: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  .sorting-arrows {
+    display: flex;
+    flex-direction: column;
+    > div {
+      cursor: pointer;
+      &.active {
+        color: #454545;
+      }
+    }
+  }
+}
+
+.error-message {
+  font-size: 25px;
+}

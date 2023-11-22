@@ -1,0 +1,122 @@
+@import "../../../../../assets/styles/global.scss";
+.filter-wrapper {
+  position: absolute;
+  top: 7px;
+  right: 0;
+  color: $theme-color;
+}
+.multi-select-dropdown {
+  width: 320px;
+  position: relative;
+  z-index: 100;
+  height: fit-content;
+  .dropdown-title-wrapper {
+    display: flex;
+  }
+  .title-wrapper {
+    width: 243px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  > div {
+    display: flex;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    display: block;
+    padding: 0.75em;
+    background: $dropdown-bg;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    position: relative;
+    z-index: 100;
+    & .down,
+    & .up {
+      position: absolute;
+      right: 0.75em;
+      width: 20px;
+      color: white;
+    }
+    & .up {
+      display: none;
+      transform: rotate(180deg);
+    }
+  }
+  > ul {
+    max-height: 0px;
+    overflow: hidden;
+    background: rgba(120, 88, 215, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0px 0px 10px 10px;
+
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    overflow-y: auto;
+    & li {
+      color: inherit;
+      display: block;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid rgb(0 0 0 / 17%);
+      label {
+        width: 100%;
+        padding: 0.5em 0.75em;
+        display: flex;
+        align-items: center;
+        &.selected {
+          background: rgba(148, 136, 255, 0.7);
+        }
+        cursor: pointer;
+        input {
+          margin: 0;
+          margin-right: 4px;
+        }
+      }
+      &:hover {
+        label:not(.selected) {
+          &:hover {
+            background: rgba(148, 136, 255, 0.6);
+          }
+        }
+      }
+    }
+  }
+  &:hover {
+    > div {
+      border-radius: 10px 10px 0px 0px;
+    }
+    .up {
+      display: inline-block;
+    }
+    .down {
+      display: none;
+    }
+    ul {
+      display: block;
+      max-height: 215px;
+      transition: max-height 0.2s ease-in;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $scrollbar-bg;
+    border-radius: 10px;
+  }
+}

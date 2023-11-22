@@ -1,0 +1,49 @@
+@import "../../../assets/styles/global.scss";
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  color: $theme-color;
+  height: 62px;
+  background: linear-gradient(
+    90deg,
+    rgba(74, 66, 143, 0.2) 0%,
+    rgba(148, 136, 255, 0.2) 35%,
+    rgba(222, 218, 255, 0.2) 100%
+  );
+  box-shadow: 0 4px 30px rgba(16, 15, 26, 0.148);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(16, 15, 26, 0.172);
+}
+.logo {
+  font-size: 22px;
+}
+.filter-wrapper {
+  display: flex;
+  place-items: center;
+
+  > div {
+    margin-right: 20px;
+    &::before {
+      background-color: $theme-color;
+    }
+  }
+  .filter-nationality-button {
+    border-radius: 10px;
+    background-color: rgba(148, 136, 255, 0.5);
+    padding: 10px;
+    box-shadow: 0 4px 30px rgba(16, 15, 26, 0.4);
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(148, 136, 255, 1);
+    }
+    &:not(.active) {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}
