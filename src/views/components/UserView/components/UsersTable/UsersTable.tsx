@@ -39,7 +39,8 @@ export const UsersTable = ({ users, isLoading, url }: UsersTableProps) => {
         const getValue = (user: User, property: string): string | number => {
           const value = property
             .split(".")
-            .reduce((obj, prop) => obj?.[prop], user);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            .reduce((obj, prop) => (obj as any)?.[prop], user);
 
           if (typeof value === "string" || typeof value === "number") {
             return value;

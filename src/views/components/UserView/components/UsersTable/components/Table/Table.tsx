@@ -104,11 +104,7 @@ export const Table = ({
             : users.map((user) => (
                 <tr
                   key={`${user.name.first}-${user.name.last}`}
-                  onClick={() =>
-                    openModal(
-                      <UserDetails user={user} columnConfig={columnConfig} />
-                    )
-                  }
+                  onClick={() => openModal(<UserDetails user={user} />)}
                 >
                   {columnConfig.map((column, colIndex) => (
                     <td key={colIndex} className={`${column.className}`}>

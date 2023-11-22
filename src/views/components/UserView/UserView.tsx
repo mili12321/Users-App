@@ -6,7 +6,8 @@ import { Pagination } from "./components/Pagination/Pagination";
 
 type Props = {
   url: string;
-  setUrl: (url: string) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setUrl: any;
   usersPerPage: number;
 };
 
